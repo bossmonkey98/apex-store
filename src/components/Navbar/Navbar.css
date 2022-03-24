@@ -1,0 +1,115 @@
+@media only screen and (max-width:800px){
+    .nav-bar{
+        grid-template-columns: 1fr 1fr 2fr;
+    }
+}
+.nav-bar{
+    padding: 10px;
+    display:grid;
+    grid-auto-flow: row;
+    grid-template-columns:1.5fr 1fr 2fr;
+    grid-template-areas: "logo menus search-icons";
+    height: fit-content;
+    background-color: var(--bg-color);
+    grid-area: navigation;
+    border-bottom:1px solid var(--primary-color);
+    border-top:1px solid var(--primary-color);
+    border-radius: 0;
+    color: var(--primary-color);
+}
+
+.logo{
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#store-logo{
+    height: 4rem;
+    width: 5rem;
+}
+
+@media only screen and (max-width:800px) {
+    #store-name {
+        display: none !important;
+    }
+}
+
+
+#store-name{
+    color:var(--secondary-color);
+    font-size: 3.5rem;
+    color:var(--primary-color)
+}
+
+@media only screen and (max-width:800px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start !important;
+        align-items: center;
+    }
+}
+
+.menu{
+    grid-area: menus;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.menu>span>a{
+    margin: 10px;
+    font-size: large;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.menu>span>a:hover{
+    color: var(--primary-color);
+}
+
+.nav-content{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    grid-area: search-icons;
+}
+.all-icons{
+    width: 40%;
+    display: flex;
+    justify-content:flex-end;
+    color: var(--secondary-color);
+}
+
+.icon{
+    margin: 0 5px;
+}
+
+.icon:hover{
+    color: var(--primary-color);
+}
+
+.query{
+    border: none;
+    width: 100%;
+    padding:8px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+}

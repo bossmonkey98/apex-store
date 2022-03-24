@@ -1,0 +1,31 @@
+.home-page-footer{
+    grid-area: footer;
+    font-size: large;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    padding:1rem 0;
+    border-top: 1px solid var(--primary-color);
+}
+
+.fav-icon{
+    align-self: flex-end;
+}
+
+.social-icons{
+    margin: 5px 10px;
+}
+
+.fav-icon ,.social-icons:hover{
+    color: var(--primary-color);
+}
+
+.logo{
+    width: 60px;
+}
+
+#store-logo{
+    width: 100%;
+}

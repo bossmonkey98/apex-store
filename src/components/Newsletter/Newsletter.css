@@ -1,0 +1,19 @@
+.subscribe{
+    color: var(--primary-color);
+    margin-top:3rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 20rem;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subscribe>input{
+    margin-top: 1rem;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+}

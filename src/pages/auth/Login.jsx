@@ -1,7 +1,6 @@
 import React from 'react'
 import './auth.css'
-import Signup from './Signup'
-import { Link, Route, Routes} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 export default function Login() {
   return (
@@ -22,9 +21,6 @@ export default function Login() {
               No Account?<Link to='/Signup'>CreatOne</Link>
          </form>
        </div>
-       <Routes>
-         <Route path='/Signup' element={<Signup/>}/>
-       </Routes>
      </div>
   )
 }

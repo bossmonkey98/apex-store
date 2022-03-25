@@ -2,12 +2,7 @@ import { AccountCircleOutlined, FavoriteBorderOutlined, Search, ShoppingCartOutl
 import React from 'react'
 import logo from '../../assets/logo/apex-legends-symbol-white.png'
 import './Navbar.css'
-import {Routes ,Link ,Route} from 'react-router-dom'
-import Home from '../../pages/home/Home'
-import Cart from '../../pages/Cart/Cart'
-import Wishlist from '../../pages/Wishlist/Wishlist'
-import Login from '../../pages/auth/Login'
-import ProductListing from '../../pages/Productlisting/ProductListing'
+import {Link } from 'react-router-dom'
 
 
 export const Navbar = () => {
@@ -42,13 +37,6 @@ export const Navbar = () => {
               </div>
             </div>
       </nav>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/Products' element={<ProductListing/>}/>
-        <Route path='/Login' element={<Login/>}/>
-        <Route path='/Wishlist' element={<Wishlist/>}/>
-        <Route path='/Cart' element={<Cart/>}/>
-      </Routes>
     </div>
   )
 }

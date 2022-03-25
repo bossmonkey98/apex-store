@@ -7,8 +7,8 @@ import logo from "../../assets/logo/apex-legends-symbol-white.png"
 export const Footer = () => {
   return (
     <div>
-        <footer className="home-page-footer">
-            <div className='logo'><img id="store-logo" src={logo} alt="logo"/></div>
+      <footer className="home-page-footer">
+            <div className='logo'><img className="store-logo" src={logo} alt="logo"/></div>
             <p>Made with <Favorite className='fav-icon'/> by <strong>BOSSMONKEY</strong> </p>
                 <div className='icons'>
                 <Instagram className="social-icons"/>
@@ -19,3 +19,6 @@ export const Footer = () => {
     </div>
   )
 }
+
+
+

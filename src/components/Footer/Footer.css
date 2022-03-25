@@ -21,11 +21,3 @@
 .fav-icon ,.social-icons:hover{
     color: var(--primary-color);
 }
-
-.logo{
-    width: 60px;
-}
-
-#store-logo{
-    width: 100%;
-}

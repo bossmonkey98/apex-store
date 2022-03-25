@@ -1,5 +1,7 @@
 import React from 'react'
 import './ProductListing.css'
+import axios from 'axios'
+
 
 function ProductListing() {
   return (

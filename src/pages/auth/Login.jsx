@@ -1,25 +1,31 @@
 import React from 'react'
 import './auth.css'
+import Signup from './Signup'
+import { Link, Route, Routes} from 'react-router-dom'
 
-export const Login = () => {
+export default function Login() {
   return (
      <div>
-       <div class="form-container">
-         <form class="form">
-             <h1 class="form-heading">APEX STORE / LOGIN</h1>
+       <div className="form-container">
+         <form className="form">
+             <h1 className="form-heading">APEX STORE / LOGIN</h1>
              <input
                  type="text"
                  name="username"
                  placeholder="Enter Username"/>
-             <input class="input"
+             <input className="input"
                  type="password" 
                  name="password"
                  placeholder="Enter Password"/>
-                 <p style={{cursor:"context-menu"}}><input type="checkbox"/>Remember me Forget Password?</p>
-             <button class="btn">Login</button>
-             <p>No Account? Create One</p>
+                 <p style={{cursor:"context-menu"}}><input type ="radio"/>Remember me Forget Password?</p>
+             <button className="btn">Login</button>
+              No Account?<Link to='/Signup'>CreatOne</Link>
          </form>
        </div>
+       <Routes>
+         <Route path='/Signup' element={<Signup/>}/>
+       </Routes>
      </div>
   )
 }
+

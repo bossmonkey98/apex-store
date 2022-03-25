@@ -1,7 +1,7 @@
 import React from 'react'
 import './auth.css'
 
-export const Signup = () => {
+export default function Signup() {
   return (
     <div>
         <div class="form-container">

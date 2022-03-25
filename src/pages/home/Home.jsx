@@ -1,16 +1,13 @@
 import React from 'react'
-import { Footer } from '../../components/Footer/Footer'
-import Navbar from '../../components/Navbar/Navbar'
+import Slider from '../../components/Slider'
 import './Home.css'
+import Newsletter from '../../components/Newsletter/Newsletter'
 
-
-const Home = () => {
+export default function Home (){
   return (
     <div>
-      <Navbar/>
-      <Footer/>
+      <Slider/>
+      <Newsletter/>
     </div>
   )
 }
-
-export default Home

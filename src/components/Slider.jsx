@@ -47,8 +47,8 @@ width:100vw`;
 
 const Offers = styled.div`
 height:40px;
-color:red;
-background-color:whitesmoke;
+color:white;
+background-color:red;
 display:flex;
 justify-content: center;
 align-items: center;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {sliderItemsHome} from '../data'
 
 const Container = styled.div`
-width: 98.94vw;
+width:100%;
 position:relative;
 overflow-x:hidden;`;
 
@@ -52,7 +52,9 @@ background-color:red;
 display:flex;
 justify-content: center;
 align-items: center;
-border:1px solid grey`;
+letter-spacing:1px;
+font-weight:600;
+font-size:1.3rem;`;
 
 
 function Slider() {
@@ -60,9 +62,9 @@ function Slider() {
 
   const clickHandler=(direction)=>{
     if(direction==="left")
-      setslideIndex(slideIndex > 0 ? slideIndex - 1 : 3)
+      setslideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
     else
-      setslideIndex(slideIndex < 3 ? slideIndex + 1 : 0)
+      setslideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
   }
   return (
     <div>

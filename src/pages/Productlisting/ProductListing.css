@@ -58,6 +58,6 @@ strong{
     color:var(--primary-color);
 }
 
-input{
+.check-box{
     cursor: pointer;
 }

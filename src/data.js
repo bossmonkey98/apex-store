@@ -13,9 +13,4 @@ export const sliderItemsHome = [
     id:3,
     img:"https://cdn.junipercreates.com/apexlegends/images/Collectibles%20-%20Mobile_1644548575802.jpg"
 },
-
-{
-    id:4,
-    img:"https://cdn.junipercreates.com/apexlegends/images/Banner%201%20-%20Apparel%20(Mobile)_1644548897498.jpg"
-}
 ]    

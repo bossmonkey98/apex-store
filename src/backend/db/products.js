@@ -7,24 +7,25 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    _id: uuid(),
-    title: "You Can WIN",
-    author: "Shiv Khera",
-    price: "5000",
-    categoryName: "non-fiction",
+    catagory:"Apperal",
+    title:"MAD MAGGIE JACKET",
+    img:"https://cdn.shopify.com/s/files/1/1796/6745/products/Apex-Maggie-Jacket-Front_800x.png?v=1644057091",
+    desc:"Intimidate your enemies with Mad Maggie’s durable denim jacket, featuring patch artwork.",
+    price: 90,
+  },
+  {
+    catagory:"Collectibles",
+    title:"MAD MAGGIE JACKET",
+    img:"https://cdn.shopify.com/s/files/1/1796/6745/products/Apex-Maggie-Jacket-Front_800x.png?v=1644057091",
+    desc:"Intimidate your enemies with Mad Maggie’s durable denim jacket, featuring patch artwork.",
+    price: 90,
   },
   {
     _id: uuid(),
-    title: "You are Winner",
-    author: "Junaid Qureshi",
-    price: "3000",
-    categoryName: "horror",
-  },
-  {
-    _id: uuid(),
-    title: "Think and Grow Rich",
-    author: "Shiv Khera",
-    price: "1000",
-    categoryName: "fiction",
+        catagory:"Accessories",
+        title:"MAD MAGGIE JACKET",
+        img:"https://cdn.shopify.com/s/files/1/1796/6745/products/Apex-Maggie-Jacket-Front_800x.png?v=1644057091",
+        desc:"Intimidate your enemies with Mad Maggie’s durable denim jacket, featuring patch artwork.",
+        price: 90,
   },
 ];

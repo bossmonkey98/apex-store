@@ -2,32 +2,29 @@ import { AccountCircleOutlined, FavoriteBorderOutlined, Search, ShoppingCartOutl
 import React from 'react'
 import logo from '../../assets/logo/apex-legends-symbol-white.png'
 import './Navbar.css'
-import { Routes, Link ,Route } from 'react-router-dom'
-import Home from '../../pages/home/Home'
-import { Cart } from '../../pages/Cart/Cart'
-import { Wishlist } from '../../pages/Wishlist/Wishlist'
-import {Login} from '../../pages/auth/Login'
-import {ProductListing} from '../../pages/Productlisting/ProductListing'
+import {Link } from 'react-router-dom'
 
-function Navbar(){
-  return(
+
+export const Navbar = () => {
+  return (
     <div>
-          <nav className="nav-bar">
+      <nav className="navbar">
         <div className="logo">
-            <span><img id="store-logo" src={logo} alt="logo"/></span>
-            <span id="store-name">pex Store</span>
+            <span><img className="store-logo" src={logo} alt="logo"/></span>
+            <span className="store-name">pex Store</span>
         </div>
         <div className="menu">
-            <span><Link to="/">Home</Link></span>
-            <span>
-               <Link to="/Products">Products</Link>
-            </span>
+          <div>
+             <Link to="/">Home</Link>
+          </div>
+          <div>
+              <Link to="/Products">Products</Link>
+          </div>
         </div>
-        <div className="nav-content">
           <div className='search-bar'>
             <input className="query" type="search" id="query" placeholder="Search Product"/>
             <Search/>
-          </div>  
+          </div> 
             <div className='all-icons' >
               <div className="icon">
                     <Link to="/Login"><AccountCircleOutlined fontSize='large'/></Link>
@@ -39,18 +36,10 @@ function Navbar(){
                   <Link to= "/Cart"><ShoppingCartOutlined fontSize='large'/></Link>
               </div>
             </div>
-        </div>
-    </nav>
-      <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/' element={<ProductListing/>}/>
-      <Route path='/' element={<Login/>}/>
-      <Route path='/' element={<Wishlist/>}/>
-      <Route path='/' element={<Cart/>}/>
-      </Routes>
+      </nav>
     </div>
   )
 }
 
-export default Navbar
+
 

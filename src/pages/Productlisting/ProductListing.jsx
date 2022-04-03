@@ -12,8 +12,6 @@ function ProductListing() {
     const {sortBy,showAccessories,showApparel,showCollectibles,rating} = {...state}
     const prod = ProductData
     var products = filtereddata(prod,state)
-    console.log(state)
-    console.log(products)
     return (
     <div>
       <div className="home-page-content">

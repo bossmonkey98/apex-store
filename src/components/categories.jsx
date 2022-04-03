@@ -13,8 +13,12 @@ const Wrapper = styled.div`
 background-color: #fff;
 flex:1;
 position:relative;
-margin:4px;
-object-fit:contain;`
+margin:1rem;
+object-fit:contain;
+&:hover{
+    transform: scale(1.1);
+    transition: 0.8s ease;
+}`;
 
 const Image = styled.img`
 width:100%;
@@ -31,9 +35,12 @@ position:absolute;
 top:0;
 bottom:0;
 width: 100%;
-color:White;
-background-color:var(--bg-color);
-opacity:0.7;`;
+color:rgb(255,255,255,0);
+&:hover{
+    transition: 0.2s ease;
+    background-color:var(--bg-color);
+    color: var(--secondary-color);
+}`;
 
 const Button = styled.button`
 cursor: pointer;
@@ -47,9 +54,7 @@ color: white;
 border-radius: 5px;
 background-color:red;
 &:hover{
-    font-weight: 600;
    background-color:var(--bg-color);
-   color:red;
    border:1px solid #c30101;
    transition: 0.5s ease;
 }`;
@@ -65,7 +70,6 @@ export default function Categories() {
         }
 
     useEffect(()=> fetchdata() ,[])
-    console.log(categoryData + "!!!")
 
   return (
       <>
@@ -82,7 +86,7 @@ export default function Categories() {
                 </Wrapper>))
             }  
         </Container>
-        </> }
-      </>
+        </>}
+    </>
   )
 }

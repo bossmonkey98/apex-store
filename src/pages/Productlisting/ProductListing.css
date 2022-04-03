@@ -25,12 +25,6 @@
     color: red;
 }
 
-.prices{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 ul>span{
     margin-left: 10px;
 }
@@ -44,14 +38,12 @@ ul{
     margin-right: 30px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
 }
 .vertical-card{
+    padding: 5px;
     flex-grow: 1;
     background-color: var(--secondary-color);
-    height:220px;
-    width: 170px;
-    max-width: 200px;
+    max-width: 210px;
     margin:30px 0 0 30px;
 }
 strong{
@@ -60,4 +52,19 @@ strong{
 
 .check-box{
     cursor: pointer;
+}
+
+.rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#star{
+    font-size:1rem !important;
+    color: gold;
+}
+
+.vertical-card-content{
+    font-size: 14px;
 }

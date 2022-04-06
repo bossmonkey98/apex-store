@@ -31,7 +31,7 @@ export default function Login() {
                   Login
               </button>
               <button className='btn' onClick={(e)=>{e.preventDefault();LogInHandler(guestUser,setUser,navigator)}}>
-                Login as Guest {console.log(user)}
+                Login as Guest
               </button>
               No Account?<Link to='/Signup'><button className='btn'>CreatOne</button></Link>
          </form>

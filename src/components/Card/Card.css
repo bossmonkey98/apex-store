@@ -1,0 +1,59 @@
+.vertical-card{
+    padding: 5px;
+    flex-grow: 1;
+    background-color: var(--secondary-color);
+    max-width: 210px;
+    margin:30px 0 0 30px;
+}
+
+.rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#star{
+    font-size:1rem !important;
+    color: gold;
+}
+
+.vertical-card-content{
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-badge{
+    background-color: var(--primary-color);
+    border-radius:0px;
+    background-color: red;
+    color: white;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.card-badge-fav{
+    position: absolute;
+    top: 1;
+    right:0;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.btn{
+    width:90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    color: var(--secondary-color);
+    margin: 5px;
+}
+.btn:hover{
+    background-color:rgba(0, 0, 0, 0.648);
+}

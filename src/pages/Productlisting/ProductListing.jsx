@@ -1,9 +1,9 @@
 import './ProductListing.css'
 import {useEffect} from 'react'
 import { useProducts } from '../../components/context/product-context'
-import { FavoriteBorderOutlined, ShoppingCart, Star } from '@material-ui/icons'
 import {useFilter} from '../../components/context/filter-context'
 import { filtereddata } from '../../components/filter'
+import { Card } from '../../components/Card/Card'
 
 function ProductListing() {
     const {ProductData, fetchProductdata} =useProducts()
@@ -39,17 +39,8 @@ function ProductListing() {
                 <div className="product-list">
                 {!products?<p key={0}>loading</p>:<>
                     {products.map((items)=>(
-                    <div key={items.id} className="vertical-card">
-                        <img className="vertical-card-img" src={items.img} alt=""/>
-                        <span className="card-badge">New</span>
-                        <span className="card-badge-fav"><FavoriteBorderOutlined fontSize='large'/></span>
-                        <div className="vertical-card-content">
-                            <h3>{items.title}</h3>
-                            <p>Price: ${items.price}</p>
-                            <p className='rating'>Rating: {items.rating}{<Star id='star'/>}</p>
-                            <button className='btn'>Add to Cart <ShoppingCart/> </button>
-                        </div>
-                    </div>))}</>}
+                        <Card items ={items}/>
+                    ))}</>}
                 </div>
         </div>
     </div> 

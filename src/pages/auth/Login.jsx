@@ -1,24 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './auth.css'
-import { Link} from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
+import {useAuth} from '../../components/context/auth-context'
+import {LogInHandler} from '../../components/auth/Loghandler'
+
 
 export default function Login() {
+  const {user,setUser} =useAuth()
+  const [loguser,setLoguser] =useState({email:'',pass:''})
+  const guestUser ={
+    email:'adarshbalika@gmail.com',
+    pass:'adarshbalika',
+  }
+  const navigator =useNavigate()
   return (
      <div>
        <div className="form-container">
-         <form className="form">
+         <form className="form" onSubmit={(e)=>{e.preventDefault();LogInHandler(loguser,setUser,navigator)}}>
              <h1 className="form-heading">APEX STORE / LOGIN</h1>
              <input
                  type="text"
                  name="username"
-                 placeholder="Enter Username"/>
+                 placeholder="Enter Email" onChange={(e)=>setLoguser({...loguser,email:e.target.value})}/>
              <input className="input"
                  type="password" 
                  name="password"
-                 placeholder="Enter Password"/>
+                 placeholder="Enter Password" onChange={(e)=>setLoguser({...loguser,pass:e.target.value})}/>
                  <p style={{cursor:"context-menu"}}><input type ="radio"/>Remember me Forget Password?</p>
-             <button className="btn">Login</button>
-              No Account?<Link to='/Signup'>CreatOne</Link>
+             <button className="btn" type='submit'>
+                  Login
+              </button>
+              <button className='btn' onClick={(e)=>{e.preventDefault();LogInHandler(guestUser,setUser,navigator)}}>
+                Login as Guest {console.log(user)}
+              </button>
+              No Account?<Link to='/Signup'><button className='btn'>CreatOne</button></Link>
          </form>
        </div>
      </div>

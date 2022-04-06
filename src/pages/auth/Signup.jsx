@@ -1,29 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './auth.css'
+import {Link ,useNavigate} from 'react-router-dom'
+import {SignUpHandler} from '../../components/auth/SignupHandler'
 
 export default function Signup() {
+    const [SignInUser,setSignInUser] =useState({firstName:'',lastName:'',email:'',password:''})
   return (
     <div>
-        <div class="form-container">
-            <form class="form">
-                <h1 class="form-heading">APEX STORE / SIGN UP</h1>
+        <div className="form-container" >
+            <form className="form">
+                <h1 className="form-heading" onSubmit={(e)=>{e.preventDefault();SignUpHandler(SignInUser)}}>APEX STORE / SIGN UP</h1>
                 <input
                     type="text"
                     name="Name"
-                    placeholder="Enter Your Full Name"/>
-                <input class="email"
+                    placeholder="Enter Your First Name" onChange={(e)=>setSignInUser({...SignInUser,firstName:e.target.val})}/>
+                <input className="email"
+                    type="text" 
+                    name="LastName"
+                    placeholder="Enter Your Last Name" onChange={(e)=>setSignInUser({...SignInUser,lastName:e.target.value})}/>
+                <input className="input"
                     type="email" 
                     name="email"
-                    placeholder="Enter Your e-mail"/>
-                <input class="input"
+                    placeholder="Enter Your E-mail" onChange={(e)=> setSignInUser({...SignInUser,email:e.target.value})}/>
+                <input className="input"
                     type="password" 
                     name="password"
-                    placeholder="Enter Password"/>
-                <input class="input"
-                    type="password" 
-                    name="password"
-                    placeholder="Confirm Password"/>
-                <button class="btn">Sign Up</button>
+                    placeholder="Enter Password" onChange={(e)=>setSignInUser({...SignInUser,password:e.target.value})}/>
+                <button className="btn">Sign Up</button>
+                <p>Already have an account?</p>
+                <Link to ="/login" >
+                    LogIn
+                </Link>
             </form>
         </div>
     </div>

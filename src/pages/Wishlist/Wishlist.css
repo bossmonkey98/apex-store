@@ -1,0 +1,8 @@
+.wishlist-Container{
+    min-height:68vh ;
+}
+
+.wishlist-content{
+    display: flex;
+    flex-wrap: wrap;
+}

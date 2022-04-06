@@ -2,10 +2,19 @@ import { AccountCircleOutlined, FavoriteBorderOutlined, Search, ShoppingCartOutl
 import React from 'react'
 import logo from '../../assets/logo/apex-legends-symbol-white.png'
 import './Navbar.css'
-import {Link } from 'react-router-dom'
+import {NavLink ,useLocation } from 'react-router-dom'
+import { useAuth } from '../context/auth-context'
+import { useWishlist } from '../context/wishlist-context'
 
 
 export const Navbar = () => {
+  const {user ,setUser} =useAuth();
+  const {pathname}=useLocation()
+  const {wishlist} = useWishlist();
+  const NavStyles = ({isActive})=>{
+    return {color:isActive?'red':'white'} 
+  }
+
   return (
     <div>
       <nav className="navbar">
@@ -15,10 +24,10 @@ export const Navbar = () => {
         </div>
         <div className="menu">
           <div>
-             <Link to="/">Home</Link>
+             <NavLink to="/" >Home</NavLink>
           </div>
           <div>
-              <Link to="/Products">Products</Link>
+              <NavLink to="/Products">Products</NavLink>
           </div>
         </div>
           <div className='search-bar'>
@@ -27,13 +36,13 @@ export const Navbar = () => {
           </div> 
             <div className='all-icons' >
               <div className="icon">
-                    <Link to="/Login"><AccountCircleOutlined fontSize='large'/></Link>
+                    <NavLink to="/Login"><AccountCircleOutlined fontSize='large'/></NavLink>
               </div>
               <div className="icon">
-                    <Link to="/Wishlist"><FavoriteBorderOutlined fontSize='large'/></Link>
+                    <NavLink to="/Wishlist"><FavoriteBorderOutlined fontSize='large'/></NavLink>
               </div>
               <div className="icon">
-                  <Link to= "/Cart"><ShoppingCartOutlined fontSize='large'/></Link>
+                  <NavLink to= "/Cart"><ShoppingCartOutlined fontSize='large'/></NavLink>
               </div>
             </div>
       </nav>

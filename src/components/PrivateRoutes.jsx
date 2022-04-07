@@ -11,4 +11,4 @@ const PrivateRoute = ({ PrivateItem }) => {
   );
 };
 
-export default PrivateRoute;
+export { PrivateRoute};

@@ -1,19 +1,20 @@
-import { AccountCircleOutlined, FavoriteBorderOutlined, Search, ShoppingCartOutlined } from '@material-ui/icons'
+import { AccountCircleOutlined, ExitToApp, FavoriteBorderOutlined, Search, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import logo from '../../assets/logo/apex-legends-symbol-white.png'
 import './Navbar.css'
 import {NavLink ,useLocation } from 'react-router-dom'
 import { useAuth } from '../context/auth-context'
 import { useWishlist } from '../context/wishlist-context'
+import {useCart} from '../context/cart-context'
+import { Badge } from '@material-ui/core'
+import {LogoutHandler} from '../auth/Loghandler'
 
 
 export const Navbar = () => {
-  const {user ,setUser} =useAuth();
+  const {user,setUser } =useAuth();
   const {pathname}=useLocation()
   const {wishlist} = useWishlist();
-  const NavStyles = ({isActive})=>{
-    return {color:isActive?'red':'white'} 
-  }
+  const {cart}= useCart()
 
   return (
     <div>
@@ -27,7 +28,7 @@ export const Navbar = () => {
              <NavLink to="/" >Home</NavLink>
           </div>
           <div>
-              <NavLink to="/Products">Products</NavLink>
+              <NavLink to="/products">Products</NavLink>
           </div>
         </div>
           <div className='search-bar'>
@@ -36,13 +37,22 @@ export const Navbar = () => {
           </div> 
             <div className='all-icons' >
               <div className="icon">
-                    <NavLink to="/Login"><AccountCircleOutlined fontSize='large'/></NavLink>
+                {!user.isUserLoggedIn?
+                    <NavLink to="/login"><AccountCircleOutlined fontSize='large'/></NavLink>:
+                    <NavLink to="/" ><ExitToApp onClick={()=>LogoutHandler(setUser)}/></NavLink>
+                }
               </div>
               <div className="icon">
-                    <NavLink to="/Wishlist"><FavoriteBorderOutlined fontSize='large'/></NavLink>
+                    <NavLink to="/wishlist">
+                    <Badge badgeContent={wishlist.length} color="secondary">
+                      <FavoriteBorderOutlined fontSize='large'/>
+                      </Badge></NavLink>
               </div>
               <div className="icon">
-                  <NavLink to= "/Cart"><ShoppingCartOutlined fontSize='large'/></NavLink>
+                  <NavLink to= "/cart">
+                  <Badge badgeContent={cart.length} color="secondary">
+                    <ShoppingCartOutlined fontSize='large'/>
+                    </Badge></NavLink>
               </div>
             </div>
       </nav>

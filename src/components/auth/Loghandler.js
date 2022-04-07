@@ -3,10 +3,10 @@ import axios from "axios";
 export const LogInHandler = ({ email, pass }, setUser, navigator) => {
   (async () => {
     try {
-      const { data, status } = await axios.post("/api/auth/login",JSON.stringify({
+      const { data, status } = await axios.post("/api/auth/login",{
         email: email,
         password: pass,
-      }));
+      });
       if (status === 200) {
         localStorage.setItem("token", JSON.stringify(data.encodedToken));
         setUser({tokenVal:JSON.stringify(data.encodedToken), isUserLoggedIn: true });

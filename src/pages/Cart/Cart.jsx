@@ -13,7 +13,7 @@ export  function Cart(){
   if(cart.length>0){
     totalcartvalue = priceCalculater(cart)
   }
-  console.log(totalcartvalue)
+
   return (
     <div className='cart-container'>
      

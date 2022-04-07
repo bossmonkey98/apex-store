@@ -3,6 +3,7 @@ import './auth.css'
 import { Link, useNavigate} from 'react-router-dom'
 import {useAuth} from '../../components/context/auth-context'
 import {LogInHandler} from '../../components/auth/Loghandler'
+import { withWidth } from '@material-ui/core'
 
 
 export default function Login() {
@@ -26,14 +27,16 @@ export default function Login() {
                  type="password" 
                  name="password"
                  placeholder="Enter Password" onChange={(e)=>setLoguser({...loguser,pass:e.target.value})}/>
-                 <p style={{cursor:"context-menu"}}><input type ="radio"/>Remember me Forget Password?</p>
-             <button className="btn" type='submit'>
+                 <p className='log-cred' style={{cursor:"context-menu"}}>
+                   <span><input type ="radio"/>Remember me</span>
+                    <span>Forget Password?</span></p>
+             <div className='log-btn'><button className="btn" type='submit'>
                   Login
               </button>
               <button className='btn' onClick={(e)=>{e.preventDefault();LogInHandler(guestUser,setUser,navigator)}}>
                 Login as Guest
-              </button>
-              No Account?<Link to='/Signup'><button className='btn'>CreatOne</button></Link>
+              </button></div>
+              No Account?<Link to='/signup' style={{textDecoration:'none'}}><button className='btn'>CreatOne</button></Link>
          </form>
        </div>
      </div>

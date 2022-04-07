@@ -29,7 +29,7 @@ const WishlistProvider = ({children}) =>{
         const AddItemToWishlist = async (prod)=>{
             const newItem = await AddtoWishlist(prod,user);
             if(newItem)
-                setWishlist(newItem.wishlist);
+                setWishlist(newItem.wishlist)
         }
     
         // remove item from wishlist

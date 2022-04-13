@@ -13,7 +13,7 @@ export  function Cart(){
   if(cart.length>0){
     totalcartvalue = priceCalculater(cart)
   }
-  console.log(totalcartvalue)
+
   return (
     <div className='cart-container'>
      
@@ -23,13 +23,12 @@ export  function Cart(){
     <div className='cart-items-container'>
      {cart.map((items)=>(
       <div className="cart-card" key={items._id}>
-      {console.log(items)}
-     <img src={items.img} className='cart-img'/>
+     <div className='img-container'><img src={items.img} className='cart-img'/></div>
       <div className="cart-content">
           <h2>Title: {items.title}</h2>
           <p>Description:
             <br/>{items.desc}</p>
-          <p>Price: ${items.price}</p>
+          <h4>Price: ${items.price}</h4>
           <div className='qty-content'>
             <button className='mybtn' onClick={()=>{updateCartValue(items._id,"increment")}}>+</button>
               Quantity: {items.qty}
@@ -47,7 +46,7 @@ export  function Cart(){
                   }
                 else{
                   alert("Login In to Continue")
-                  // navigator("/login")
+                  navigator("/login")
                   }
                 }}>Move To WishList</button>}
           </div>

@@ -14,8 +14,8 @@ const Card = ({items}) => {
   const {cart, addToCart} = useCart()
 
   return (
-    <div key={items._id} className="vertical-card">
-        <img className="vertical-card-img" src={items.img} alt=""/>
+    <div  className="vertical-card">
+        <div className='img-container'><img className="vertical-card-img" src={items.img} alt=""/></div>
         <span className="card-badge">{items.rating}{<Star id='star' />}</span>
           
           {/*wishlist*/}

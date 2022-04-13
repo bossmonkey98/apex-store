@@ -39,7 +39,7 @@ function ProductListing() {
                 <div className="product-list">
                 {!products?<p key={0}>loading</p>:<>
                     {products.map((items)=>(
-                        <Card items ={items}/>
+                        <Card key={items.id} items ={items}/>
                     ))}</>}
                 </div>
         </div>

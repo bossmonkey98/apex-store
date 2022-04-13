@@ -14,13 +14,12 @@ const CartProvider = ({children})=>{
     const {user} =useAuth()
     
     useEffect(()=>{
-        console.log(cart)
         if(user.isUserLoggedIn){ 
         (async()=>{
         const data = await getCart(user)
             if(data){
             setCart(data.cart)
-            console.log(cart)}}
+            }}
             )()}
             else{
                 setCart([])

@@ -76,7 +76,7 @@ export default function Categories() {
         {!categoryData? <>Loading</> : <>
         <Container>
             {categoryData.map((items) =>(
-                <Wrapper>
+                <Wrapper key={items.id}>
                     <Image src = {items.img} />
                     <Title>{items.categoryName}
                     <Link to="/products">

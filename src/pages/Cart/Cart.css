@@ -6,56 +6,75 @@
 
 .cart-items-container{
     width:70vw;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
-    background-color:var(--bg-color);
     overflow:hidden;
 }
 
 .cart-card{
+    box-sizing: border-box;
     width: 100%;
     height:50vh;
     background-color:var(--secondary-color);
     display:flex;
-    grid-template-columns: 1fr 2fr;
-    color: black;
     margin: 10px;
     object-fit: cover;
+    background-color: var(--bg-color);
 }
 
+.img-container{
+    max-width: 30vw;
+    width: 50%;
+    height: 100% !important;
+    background-color: var(--secondary-color);
+}
+
+.cart-img{
+    width: 100%;
+    height: 100%;
+}
 
 .cart-content{
     width:70%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    margin:10px 5px;
-    padding: 10px;
+    justify-content: flex-start;
+    margin:5px 5px;
+    padding: 5px;
 }
+
 
 .cart-content>p{
     margin: 5px;
-    font-size: larger;
+}
+
+.item-price{
+    font-weight: 600;
 }
 
 .qty-content{
-    margin:10px;
+    margin:0 5px;
     padding: 10px;
     display: flex;
     align-items: center;
 }
 .qty-content>button{
-    background-color: aliceblue;
+    background-color: var(--secondary-color);
     color: black;
     font-weight: 800;
     font-size: large;
     border: none;
-    width: 50px;
-    height:50px;
+    width: 40px;
+    height:40px;
     margin:0 5px;
     cursor: pointer;
+    text-align: center;
 }
+
+.qty-content>button:hover{
+    background-color: lightgrey;
+}
+
 .cart-btns{
     display: flex;
 }

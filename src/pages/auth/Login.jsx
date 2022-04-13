@@ -3,7 +3,6 @@ import './auth.css'
 import { Link, useNavigate} from 'react-router-dom'
 import {useAuth} from '../../components/context/auth-context'
 import {LogInHandler} from '../../components/auth/Loghandler'
-import { withWidth } from '@material-ui/core'
 
 
 export default function Login() {

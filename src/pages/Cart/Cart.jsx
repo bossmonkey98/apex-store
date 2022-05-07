@@ -23,7 +23,7 @@ export  function Cart(){
     <div className='cart-items-container'>
      {cart.map((items)=>(
       <div className="cart-card" key={items._id}>
-     <div className='img-container'><img src={items.img} className='cart-img'/></div>
+     <div id='img-container'><img src={items.img} className='cart-img'/></div>
       <div className="cart-content">
           <h2>Title: {items.title}</h2>
           <p>Description:

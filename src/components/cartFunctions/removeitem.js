@@ -3,7 +3,7 @@ import axios from "axios";
 export const removeCartItems = async (id,user) =>{
     try{
         const {data} =await axios.delete(`/api/user/cart/${id}`, 
-        {headers: {
+        {headers:{
             authorization:user.tokenVal
             }
         },

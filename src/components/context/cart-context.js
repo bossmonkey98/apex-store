@@ -14,13 +14,12 @@ const CartProvider = ({children})=>{
     const {user} =useAuth()
     
     useEffect(()=>{
-        console.log(cart)
         if(user.isUserLoggedIn){ 
         (async()=>{
         const data = await getCart(user)
             if(data){
             setCart(data.cart)
-            console.log(cart)}}
+            }}
             )()}
             else{
                 setCart([])
@@ -33,7 +32,7 @@ const CartProvider = ({children})=>{
             setCart(newitem.cart)
         }
 
-        const removeItemFromCart = async (id) =>{
+        const removeItemFromCart = async (id,user) =>{
             const removeItem = await removeCartItems(id,user)
             if(removeItem)
             setCart(removeItem.cart)

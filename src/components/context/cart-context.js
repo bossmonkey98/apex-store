@@ -32,7 +32,7 @@ const CartProvider = ({children})=>{
             setCart(newitem.cart)
         }
 
-        const removeItemFromCart = async (id) =>{
+        const removeItemFromCart = async (id,user) =>{
             const removeItem = await removeCartItems(id,user)
             if(removeItem)
             setCart(removeItem.cart)

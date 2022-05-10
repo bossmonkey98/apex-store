@@ -29,7 +29,7 @@ export default function Signup() {
                 <button className="btn">Sign Up</button>
                 <p>Already have an account?</p>
                 <Link to ="/login" >
-                    LogIn
+                    <button className='btn'> LogIn </button>
                 </Link>
             </form>
         </div>

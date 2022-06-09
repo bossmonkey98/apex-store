@@ -9,7 +9,6 @@ import {Wishlist} from './pages/Wishlist/Wishlist'
 import Login from './pages/auth/Login'
 import ProductListing from './pages/Productlisting/ProductListing'
 import {PrivateRoute} from './components/PrivateRoutes'
-import MockmanEs from 'mockman-js';
 
 
 
@@ -24,7 +23,6 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path ='/cart' element={<PrivateRoute PrivateItem={<Cart/>}/>}/>
         <Route path='/wishlist' element={<PrivateRoute PrivateItem ={<Wishlist/>}/>}/>
-        <Route path='/mockman' element={<MockmanEs/>}/>
        </Routes>
       <Footer/>
     </div>

@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getCart } from "../cartFunctions/getcart";
-import { addCart } from "../cartFunctions/addtocart";
-import { removeCartItems } from "../cartFunctions/removeitem";
-import { updateCart } from "../cartFunctions/updatecart";
+import { getCart } from "../services/cartFunctions/getcart";
+import { addCart } from "../services/cartFunctions/addtocart";
+import { removeCartItems } from "../services/cartFunctions/removeitem";
+import { updateCart } from "../services/cartFunctions/updatecart";
 import { useAuth } from "./auth-context";
 
 const CartContext = createContext()

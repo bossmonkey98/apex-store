@@ -1,9 +1,9 @@
 import React from 'react'
-import { useCart } from '../../components/context/cart-context'
-import { useAuth } from '../../components/context/auth-context'
-import { useWishlist } from '../../components/context/wishlist-context'
+import { useCart } from '../../context/cart-context'
+import { useAuth } from '../../context/auth-context'
+import { useWishlist } from '../../context/wishlist-context'
 import './Cart.css'
-import { priceCalculater } from '../../components/cartFunctions/pricecalculator'
+import { priceCalculater } from '../../services/cartFunctions/pricecalculator'
 
 export  function Cart(){
   const { cart, removeItemFromCart , updateCartValue} = useCart()
@@ -30,8 +30,9 @@ export  function Cart(){
             <br/>{items.desc}</p>
           <h4>Price: ${items.price}</h4>
           <div className='qty-content'>
-            <button className='mybtn' onClick={()=>{updateCartValue(items._id,"increment")}}>+</button>
-              Quantity: {items.qty}
+          Quantity:
+             <button className='mybtn' onClick={() => { updateCartValue(items._id, "increment") }}>+</button>
+               {items.qty}
             {items.qty>0 && <button className='mybtn' onClick={()=>{updateCartValue(items._id,"decrement")}}>-</button>}
           </div>
           <div className='cart-btns'>
@@ -64,7 +65,7 @@ export  function Cart(){
             <div><p><strong>Price</strong></p><span>{totalcartvalue.total}</span></div>
             <div><p><strong>GST</strong></p><span>10%</span></div>
             <div><p><strong>Total</strong></p><span>{totalcartvalue.totalprice}</span></div>
-            <button class="cart-btn">CHECKOUT</button>
+            <button className="cart-btn">CHECKOUT</button>
      </div>
      </div>
     </div>

@@ -9,8 +9,8 @@
 
 .form{
     background-color: var(--bg-color);
-    width:35rem;
-    height:fit-content;
+    max-width:max-content;
+    height:60vh;
     align-items: center;
     justify-content: center;
     font-weight: 600;
@@ -19,19 +19,20 @@
 .form-heading{
     color: var(--primary-color);
     font-family: 'Times New Roman', Times, serif;
+    font-size:3rem;
 }
 
 
 .form>input{
     margin: 10px;
     width: 20rem;
-    height: 2rem;
     border: 2px solid var(--primary-color);
 }
 
 .btn{
     background-color: var(--primary-color);
-    width:8rem !important ;
+    width:8rem !important;
+    height:2.5rem;
     color: black;
     cursor: pointer;
 }

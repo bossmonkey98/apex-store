@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import './auth.css'
 import { Link, useNavigate} from 'react-router-dom'
-import {useAuth} from '../../components/context/auth-context'
-import {LogInHandler} from '../../components/auth/Loghandler'
-import { withWidth } from '@material-ui/core'
+import {useAuth} from '../../context/auth-context'
+import {LogInHandler} from '../../services/auth/Loghandler'
 
 
 export default function Login() {
@@ -18,8 +17,8 @@ export default function Login() {
      <div>
        <div className="form-container">
          <form className="form" onSubmit={(e)=>{e.preventDefault();LogInHandler(loguser,setUser,navigator)}}>
-             <h1 className="form-heading">APEX STORE / LOGIN</h1>
-             <input
+             <h1 className="form-heading">LOGIN</h1>
+             <input className='input'
                  type="text"
                  name="username"
                  placeholder="Enter Email" onChange={(e)=>setLoguser({...loguser,email:e.target.value})}/>

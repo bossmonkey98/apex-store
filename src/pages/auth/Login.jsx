@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './auth.css'
 import { Link, useNavigate} from 'react-router-dom'
-import {useAuth} from '../../components/context/auth-context'
-import {LogInHandler} from '../../components/auth/Loghandler'
+import {useAuth} from '../../context/auth-context'
+import {LogInHandler} from '../../services/auth/Loghandler'
 
 
 export default function Login() {

@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import './auth.css'
 import { Link, useNavigate} from 'react-router-dom'
-<<<<<<< HEAD
+
 import {useAuth} from '../../context/auth-context'
 import {LogInHandler} from '../../services/auth/Loghandler'
-=======
-import {useAuth} from '../../components/context/auth-context'
-import {LogInHandler} from '../../components/auth/Loghandler'
->>>>>>> dev
+
 
 
 export default function Login() {
@@ -40,7 +37,7 @@ export default function Login() {
               <button className='btn' onClick={(e)=>{e.preventDefault();LogInHandler(guestUser,setUser,navigator)}}>
                 Login as Guest
               </button></div>
-              No Account?<Link to='/signup' style={{textDecoration:'none'}}><button className='btn'>CreatOne</button></Link>
+              No Account?<Link to='/signup' style={{textDecoration:'none'}}><button className='btn'>CreatOne</button></Link >
          </form>
        </div>
      </div>

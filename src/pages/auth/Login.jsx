@@ -35,7 +35,7 @@ export default function Login() {
               <button className='btn' onClick={(e)=>{e.preventDefault();LogInHandler(guestUser,setUser,navigator)}}>
                 Login as Guest
               </button></div>
-              No Account?<Link to='/signup' style={{textDecoration:'none'}}><button className='btn'>CreatOne</button></Link>
+              No Account?<Link to='/signup' style={{textDecoration:'none'}}><button className='btn'>CreatOne</button></Link >
          </form>
        </div>
      </div>

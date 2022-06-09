@@ -1,8 +1,8 @@
 import './ProductListing.css'
 import {useEffect} from 'react'
-import { useProducts } from '../../components/context/product-context'
-import {useFilter} from '../../components/context/filter-context'
-import { filtereddata } from '../../components/filter'
+import { useProducts } from '../../context/product-context'
+import {useFilter} from '../../context/filter-context'
+import { filtereddata } from '../../reducer/filter'
 import { Card } from '../../components/Card/Card'
 
 function ProductListing() {
@@ -37,7 +37,7 @@ function ProductListing() {
                 </div>
             </div>
                 <div className="product-list">
-                {!products?<p key={0}>loading</p>:<>
+                {!products?<p>loading</p>:<>
                     {products.map((items)=>(
                         <Card key={items.id} items ={items}/>
                     ))}</>}

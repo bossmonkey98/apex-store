@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWishlist } from '../../components/context/wishlist-context'
+import { useWishlist } from '../../context/wishlist-context'
 import {Card} from '../../components/Card/Card'
 import './Wishlist.css'
 
@@ -13,7 +13,7 @@ export  function Wishlist(){
       </>:<><h1>Your WishList Items</h1>
       <div className='wishlist-content'>
         {wishlist.map((items)=>(
-          <Card items ={items}/>
+          <Card key={items.id} items ={items}/>
         ))}
       </div></>}
     </div>

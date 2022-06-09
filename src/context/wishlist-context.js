@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuth } from "./auth-context";
-import { getWishlist } from "../WishlistFunctions/getWishlist";
-import { AddtoWishlist } from "../WishlistFunctions/Addtowishlist";
-import { RemoveFromWishlist } from "../WishlistFunctions/RemoveWishlist";
+import { getWishlist } from "../services/WishlistFunctions/getWishlist";
+import { AddtoWishlist } from "../services/WishlistFunctions/Addtowishlist";
+import { RemoveFromWishlist } from "../services/WishlistFunctions/RemoveWishlist";
 
 const WishlistContext = createContext()
 

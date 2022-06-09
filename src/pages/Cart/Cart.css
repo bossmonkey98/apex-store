@@ -52,7 +52,7 @@
 }
 
 .qty-content{
-    margin:0 5px;
+    margin:0 10px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -63,9 +63,9 @@
     font-weight: 800;
     font-size: large;
     border: none;
-    width: 40px;
-    height:40px;
-    margin:0 5px;
+    width: 2.5rem;
+    height:2.5rem;
+    margin:0 2rem;
     cursor: pointer;
     text-align: center;
 }

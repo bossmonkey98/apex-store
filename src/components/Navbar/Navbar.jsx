@@ -3,11 +3,11 @@ import React from 'react'
 import logo from '../../assets/logo/apex-legends-symbol-white.png'
 import './Navbar.css'
 import {NavLink ,useLocation } from 'react-router-dom'
-import { useAuth } from '../context/auth-context'
-import { useWishlist } from '../context/wishlist-context'
-import {useCart} from '../context/cart-context'
+import { useAuth } from '../../context/auth-context'
+import { useWishlist } from '../../context/wishlist-context'
+import {useCart} from '../../context/cart-context'
 import { Badge } from '@material-ui/core'
-import {LogoutHandler} from '../auth/Loghandler'
+import {LogoutHandler} from '../../services/auth/Loghandler'
 
 
 export const Navbar = () => {

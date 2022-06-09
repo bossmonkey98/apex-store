@@ -6,7 +6,7 @@ export const removeCartItems = async (id,user) =>{
         {headers:{
             authorization:user.tokenVal
             }
-        },
+        }
         )
         return data
     }

@@ -9,7 +9,7 @@ import {Wishlist} from './pages/Wishlist/Wishlist'
 import Login from './pages/auth/Login'
 import ProductListing from './pages/Productlisting/ProductListing'
 import {PrivateRoute} from './components/PrivateRoutes'
-import MockmanEs from 'mockman-js';
+import Error404 from './pages/Error404/Error404';
 
 
 
@@ -23,8 +23,8 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path ='/cart' element={<PrivateRoute PrivateItem={<Cart/>}/>}/>
-        <Route path='/wishlist' element={<PrivateRoute PrivateItem ={<Wishlist/>}/>}/>
-        <Route path='/mockman' element={<MockmanEs/>}/>
+        <Route path='/wishlist' element={<PrivateRoute PrivateItem={<Wishlist />} />} />
+        <Route path='*' element={<Error404/>}/>
        </Routes>
       <Footer/>
     </div>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Favorite,FavoriteBorderOutlined, ShoppingCart, Star } from '@material-ui/icons'
 import './Card.css'
-import { useAuth } from '../../components/context/auth-context'
-import { useWishlist } from '../../components/context/wishlist-context'
+import { useAuth } from '../../context/auth-context'
+import { useWishlist } from '../../context/wishlist-context'
 import { useNavigate } from 'react-router-dom'
-import { useCart } from '../context/cart-context'
+import { useCart } from '../../context/cart-context'
 
 
 const Card = ({items}) => {

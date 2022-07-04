@@ -33,7 +33,10 @@ const Card = ({items}) => {
                                   navigator("/login")}}}><FavoriteBorderOutlined fontSize='large'/></span>}
           <div className="vertical-card-content">
               <h3>{items.title}</h3>
-              <p>Price: ${items.price}</p>
+        <p className='price'>
+          <span>Price: ${items.price}</span>
+          <span style={{ color: 'var(--primary-color)',fontWeight:"600"}}>20%OFF</span>
+        </p>
               {!cart.find((prod)=>items._id === prod._id)?
               <button className='btn' onClick={()=>addToCart(items)} >
                   Add to Cart <ShoppingCart/>

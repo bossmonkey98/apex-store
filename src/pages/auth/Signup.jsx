@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import './auth.css'
 import {Link ,useNavigate} from 'react-router-dom'
-import {SignUpHandler} from '../../services/auth/SignupHandler'
+import { SignUpHandler } from '../../services/auth/SignupHandler'
+import {useAuth} from '../../context/auth-context'
 
 export default function Signup() {
     const navigator = useNavigate()
+    const {user,setUser} = useAuth()
     const [SignInUser,setSignInUser] =useState({firstName:'',lastName:'',email:'',password:''})
   return (
     <div>
         <div className="form-container" >
-            <form className="form" onSubmit={(e)=>{e.preventDefault();SignUpHandler(SignInUser,navigator)}}>
+            <form className="form" onSubmit={(e)=>{e.preventDefault();SignUpHandler(SignInUser,setUser,navigator)}}>
                 <h1 className="form-heading" >Sign Up</h1>
                 <input
                     type="text"

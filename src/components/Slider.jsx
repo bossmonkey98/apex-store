@@ -39,22 +39,19 @@ height:80vh;`;
 const Slide = styled.div`
 display:flex;
 transition:0.5s ease;
-transform: translateX(${props=>props.slideIndex *(-100)}vw);
-object-fit:cover;`;
+transform: translateX(${props=>props.slideIndex *(-100)}vw);`;
 
 const Image = styled.img`
 width:100vw`;
 
 const Offers = styled.div`
 height:40px;
+width:100%;
 color:white;
 background-color:red;
 display:flex;
-justify-content: center;
 align-items: center;
-letter-spacing:1px;
-font-weight:600;
-font-size:1.3rem;`;
+`;
 
 
 function Slider() {
@@ -84,7 +81,7 @@ function Slider() {
           </Arrow>
       </Container>
       <Offers>
-            Free Worldwide Shipping Available For Cart Value Above $100
+           <p style={{animation:"move 10s linear infinite"}}>Free Shipping For Cart Value Above $100</p>
       </Offers>
     </div>
   )

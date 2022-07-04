@@ -12,6 +12,7 @@ flex-wrap:wrap`;
 const Wrapper = styled.div`
 background-color: #fff;
 flex:1;
+min-width:200px;
 position:relative;
 margin:1rem;
 object-fit:contain;

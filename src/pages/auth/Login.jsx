@@ -5,8 +5,6 @@ import { Link, useNavigate} from 'react-router-dom'
 import {useAuth} from '../../context/auth-context'
 import {LogInHandler} from '../../services/auth/Loghandler'
 
-
-
 export default function Login() {
   const {user,setUser} =useAuth()
   const [loguser,setLoguser] =useState({email:'',pass:''})

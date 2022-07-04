@@ -1,50 +1,34 @@
 import './ProductListing.css'
-import {useEffect} from 'react'
+import { useEffect, useState } from 'react'
 import { useProducts } from '../../context/product-context'
-import {useFilter} from '../../context/filter-context'
+import { useFilter } from '../../context/filter-context'
 import { filtereddata } from '../../reducer/filter'
 import { Card } from '../../components/Card/Card'
+import { Filter } from '../../components/Filter'
+import { Fab } from '@material-ui/core'
+import { FilterList} from '@material-ui/icons'
 
 function ProductListing() {
-    const {ProductData, fetchProductdata} =useProducts()
-    useEffect(()=>fetchProductdata(),[])
-    const {state ,dispatch} =useFilter()
-    const {sortBy,showAccessories,showApparel,showCollectibles,rating} = {...state}
+    const { ProductData, fetchProductdata } = useProducts()
+    useEffect(() => fetchProductdata(), [])
+    const { state, dispatch } = useFilter()
+    const [bool ,setBool] =useState(false)
     const prod = ProductData
-    var products = filtereddata(prod,state)
+    var products = filtereddata(prod, state)
     return (
-    <div>
-      <div className="home-page-content">
-            <div className="filters">
-                <p><strong>Filter</strong><a className="clear" onClick={()=>dispatch({type:'clear'})}>Clear</a></p>
-                <strong>Category</strong>
-                <div className="categories">
-                    <ul><input className="check-box" onChange={()=>dispatch({type:'Accessories'})} checked={showAccessories} type="checkbox"/><span>Accessories</span></ul>
-                    <ul><input className="check-box" onChange={()=>dispatch({type:'Apparel'})} checked={showApparel} type="checkbox"/><span>Apparel</span></ul>
-                    <ul><input className="check-box" onChange={()=>dispatch({type:'Collectibles'})} checked={showCollectibles} type="checkbox"/><span>Collectibles</span></ul>
-                </div>
-                <strong>Rating</strong>
-                <div className="ratings">
-                    <ul><input className="check-box" onChange={()=>dispatch({type:'rating',payload:4})} checked={rating && rating === 4} type="checkbox"/><span>4 Stars and above</span></ul>
-                    <ul><input className="check-box" onChange={()=>dispatch({type:'rating',payload:3})} checked={rating && rating === 3} type="checkbox"/><span>3 Stars and above</span></ul>
-                    <ul><input className="check-box" onChange={()=>dispatch({type:'rating',payload:2})} checked={rating && rating === 2} type="checkbox"/><span>2 Stars and above</span></ul>
-                    <ul><input className="check-box" onChange={()=>dispatch({type:'rating',payload:1})} checked={rating && rating === 1} type="checkbox"/><span>1 Stars and above</span></ul>
-                </div>
-                <strong>Sort by</strong>
-                <div className="sort">
-                    <ul><input className="check-box" name="sorting" type="radio" onChange={()=>dispatch({type:'sort',payload:"Price_Low_To_High"})} checked={sortBy && sortBy === "Price_Low_To_High"} /><span>Price- Low to High</span></ul>
-                    <ul><input className="check-box" name="sorting" type="radio" onChange={()=>dispatch({type:'sort',payload:"Price_High_To_Low"})} checked={sortBy && sortBy === "Price_High_To_Low"}/><span>Price- High to Low</span></ul> 
-                </div>
-            </div>
-                <div className="product-list">
-                {!products?<p>loading</p>:<>
-                    {products.map((items)=>(
-                        <Card key={items.id} items ={items}/>
+        <div className="home-page-content">
+            {bool && <Filter state={state} dispatch={dispatch} />}
+            <div className="product-list">
+                {!products ? <p>loading</p> : <>
+                    {products.map((items) => (
+                        <Card key={items.id} items={items} />
                     ))}</>}
-                </div>
+            </div>
+            <Fab className='FAB' size='small' onClick={()=>setBool(!bool)}>
+                <FilterList fontSize='small'/>
+            </Fab>
         </div>
-    </div> 
-  )
+    )
 }
 
 export default ProductListing

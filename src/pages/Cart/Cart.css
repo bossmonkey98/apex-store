@@ -113,3 +113,7 @@
     background-color: var(--bg-color);
     border: 1px solid var(--primary-color);
 }
+
+button:disabled{
+    cursor: not-allowed;
+}

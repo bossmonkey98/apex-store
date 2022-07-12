@@ -1,5 +1,5 @@
 .navbar{
-    padding: 5px;
+    padding: 12px;
     display:flex;
     background-color: var(--bg-color);
     border-bottom:1px solid var(--primary-color);
@@ -17,17 +17,13 @@
 }
 
 .store-logo{
-    width: 70px;
+    width: 2rem;
+    height: 2rem;
 }
 
-@media only screen and (max-width:1040px) {
-    .store-name {
-        display: none !important;
-    }
-}
 
 .store-name{
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     color:var(--primary-color);
 }
 
@@ -80,15 +76,4 @@
     height: 100%;
     padding:8px;
     outline: none;
-}
-
-.search-bar{
-    flex: 0.6;
-    display: flex;
-    width:60%;
-    height: 30px;
-    align-items: center;
-    margin: 0 10px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--secondary-color);
 }

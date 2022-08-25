@@ -84,3 +84,8 @@ strong{
     text-decoration: inherit;
     color: var(--secondary-color);
 }
+.paginate>a:focus{
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}

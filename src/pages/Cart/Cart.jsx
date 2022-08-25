@@ -20,7 +20,7 @@ export function Cart() {
 
   return (
     <div className='cart-container'>
-      <Modal/>
+      <Modal />
       <div>
         <h1 style={{ margin: '10px' }}> Your Cart Items</h1>
         {cart.length != 0 ?
@@ -36,7 +36,7 @@ export function Cart() {
                   <div className='qty-content'>
                     Quantity:
                     <button className='mybtn' onClick={() => { updateCartValue(items._id, "increment") }}>+</button>
-                    {items.qty>0?items.qty:0}
+                    {items.qty > 0 ? items.qty : 0}
                     <button className='mybtn'
                       disabled={true && items.qty === 0}
                       onClick={() => {
@@ -78,7 +78,10 @@ export function Cart() {
           <div><p><strong>GST</strong></p><span>10%</span></div>
           <div><p><strong>Total</strong></p><span>{totalcartvalue.totalprice}</span></div>
           <button className="cart-btn"
-          onClick={()=>setShowModal(true)}>CHECKOUT
+            onClick={() => {
+              if (cart.length > 0)
+                setShowModal(true)
+            }}>CHECKOUT
           </button>
         </div>
       </div>

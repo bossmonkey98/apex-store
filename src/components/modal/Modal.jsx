@@ -20,10 +20,6 @@ export const Modal = () => {
           <p>PinCode: 560067</p>
         </>
         <button className='cart-btn'
-          onClick={() => {
-            setShowModal(false)
-          }
-          }
         >Place Order</button>
       </div>
     </div>

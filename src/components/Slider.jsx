@@ -42,7 +42,8 @@ transition:0.5s ease;
 transform: translateX(${props=>props.slideIndex *(-100)}vw);`;
 
 const Image = styled.img`
-width:100vw`;
+width:100vw;
+object-fit:fill;`;
 
 const Offers = styled.div`
 height:40px;

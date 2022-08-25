@@ -129,7 +129,10 @@ export const updateCartItemHandler = function (schema, request) {
     } else if (action.type === "decrement") {
       userCart.forEach((product) => {
         if (product._id === productId) {
-          product.qty -= 1;
+          if (product.qty > 0) {
+            product.qty -= 1;
+          }
+          else product.qty = 0
           product.updatedAt = formatDate();
         }
       });
